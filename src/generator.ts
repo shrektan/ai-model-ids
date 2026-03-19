@@ -534,6 +534,7 @@ export function generate(opts: GeneratorOptions): string {
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #555;
+      text-wrap: balance;
     }
 
     .changelog-list {
