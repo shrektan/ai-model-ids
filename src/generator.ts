@@ -257,7 +257,7 @@ export function generate(opts: GeneratorOptions): string {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Model IDs — The canonical developer reference</title>
   <meta name="description" content="${escapeHtml(description)}">
-  <meta name="keywords" content="AI model IDs, OpenAI models, GPT-4o model ID, Anthropic models, Claude model ID, Google Gemini models, Gemini model ID, Mistral models, DeepSeek models, xAI Grok models, LLM model list, AI API model names, model identifier lookup, AI model reference">
+  <meta name="keywords" content="${escapeHtml(`AI model IDs, ${providers.sort().map(p => `${p} models`).join(', ')}, LLM model list, AI API model names, model identifier lookup, AI model reference`)}">
   <link rel="canonical" href="${SITE_URL}/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate" type="application/atom+xml" title="AI Model IDs — Changes Feed" href="feed.xml">

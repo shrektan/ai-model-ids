@@ -1,8 +1,9 @@
 import type { ModelEntry, Fetcher } from '../types.ts';
 
 /**
- * MiniMax does not provide a /v1/models listing endpoint.
- * Models are curated from https://platform.minimax.io/docs/guides/models-intro
+ * [STATIC] MiniMax does not provide a /v1/models listing endpoint (returns 404).
+ * Models are manually curated from https://platform.minimax.io/docs/guides/models-intro
+ * Last updated: 2026-03-19
  */
 export const fetchMiniMax: Fetcher = async () => {
   const models: ModelEntry[] = [
