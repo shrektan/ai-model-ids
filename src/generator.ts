@@ -241,7 +241,7 @@ export function generate(opts: GeneratorOptions): string {
       --space-6: 24px;
     }
 
-    html { font-size: 14px; scroll-behavior: smooth; }
+    html { font-size: 15px; scroll-behavior: smooth; }
     body {
       font-family: var(--font-ui);
       color: var(--color-text);
