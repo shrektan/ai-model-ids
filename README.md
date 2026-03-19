@@ -16,7 +16,7 @@ Every developer building multi-provider AI apps has to dig through 5+ separate d
 
 ## Providers
 
-OpenAI, Anthropic (Claude), Google (Gemini), Mistral, DeepSeek, xAI (Grok), Moonshot (Kimi), Alibaba (Qwen), Zhipu (GLM)
+OpenAI, Anthropic (Claude), Google (Gemini), DeepSeek, xAI (Grok), Moonshot (Kimi), Alibaba (Qwen), Zhipu (GLM), MiniMax
 
 ## Development
 
