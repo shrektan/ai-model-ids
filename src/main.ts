@@ -12,6 +12,7 @@ import { fetchGoogle } from './fetchers/google.ts';
 import { fetchMistral } from './fetchers/mistral.ts';
 import { fetchDeepSeek } from './fetchers/deepseek.ts';
 import { fetchXAI } from './fetchers/xai.ts';
+import { fetchAnthropic } from './fetchers/anthropic.ts';
 import { createYamlFetcher } from './fetchers/yaml.ts';
 
 const DIST_DIR = join(import.meta.dir, '..', 'dist');
@@ -23,7 +24,7 @@ const FETCHER_CONFIGS: FetcherConfig[] = [
   { name: 'Mistral',   fetcher: fetchMistral },
   { name: 'DeepSeek',  fetcher: fetchDeepSeek },
   { name: 'xAI',       fetcher: fetchXAI },
-  { name: 'Anthropic', fetcher: createYamlFetcher(join(DATA_DIR, 'anthropic.yaml')) },
+  { name: 'Anthropic', fetcher: fetchAnthropic },
   { name: 'Moonshot',  fetcher: createYamlFetcher(join(DATA_DIR, 'kimi.yaml')) },
   { name: 'Alibaba',   fetcher: createYamlFetcher(join(DATA_DIR, 'qwen.yaml')) },
   { name: 'Zhipu',     fetcher: createYamlFetcher(join(DATA_DIR, 'zhipu.yaml')) },
