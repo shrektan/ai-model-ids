@@ -1,0 +1,43 @@
+# Moonshot AI (Kimi) models
+# Source: https://platform.moonshot.cn/docs/api/chat
+- id: moonshot-v1-8k
+  provider: Moonshot
+  name: Moonshot v1 8K
+  capabilities: [text]
+  contextWindow: 8000
+  status: live
+
+- id: moonshot-v1-32k
+  provider: Moonshot
+  name: Moonshot v1 32K
+  capabilities: [text]
+  contextWindow: 32000
+  status: live
+
+- id: moonshot-v1-128k
+  provider: Moonshot
+  name: Moonshot v1 128K
+  capabilities: [text]
+  contextWindow: 128000
+  status: live
+
+- id: kimi-latest
+  provider: Moonshot
+  name: Kimi Latest
+  capabilities: [text, image]
+  contextWindow: 128000
+  status: live
+
+- id: kimi-thinking-preview
+  provider: Moonshot
+  name: Kimi Thinking Preview
+  capabilities: [text]
+  contextWindow: 128000
+  status: preview
+
+- id: kimi-k1-5-preview
+  provider: Moonshot
+  name: Kimi K1.5 Preview
+  capabilities: [text, image]
+  contextWindow: 128000
+  status: preview

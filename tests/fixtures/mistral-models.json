@@ -1,0 +1,61 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "mistral-large-latest",
+      "object": "model",
+      "created": 1703186988,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false
+      },
+      "max_context_length": 131072
+    },
+    {
+      "id": "mistral-small-latest",
+      "object": "model",
+      "created": 1703186988,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false
+      },
+      "max_context_length": 131072
+    },
+    {
+      "id": "pixtral-large-latest",
+      "object": "model",
+      "created": 1703186988,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": true
+      },
+      "max_context_length": 131072
+    },
+    {
+      "id": "mistral-embed",
+      "object": "model",
+      "created": 1703186988,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": false,
+        "completion_fim": false,
+        "function_calling": false,
+        "fine_tuning": false,
+        "vision": false
+      },
+      "max_context_length": 8192
+    }
+  ]
+}

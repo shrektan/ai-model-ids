@@ -1,0 +1,33 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "grok-2-1212",
+      "object": "model",
+      "owned_by": "xai",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    {
+      "id": "grok-2-vision-1212",
+      "object": "model",
+      "owned_by": "xai",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    {
+      "id": "grok-3",
+      "object": "model",
+      "owned_by": "xai",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    {
+      "id": "grok-3-mini",
+      "object": "model",
+      "owned_by": "xai",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    }
+  ]
+}

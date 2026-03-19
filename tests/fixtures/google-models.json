@@ -1,0 +1,44 @@
+{
+  "models": [
+    {
+      "name": "models/gemini-2.0-flash",
+      "displayName": "Gemini 2.0 Flash",
+      "description": "Gemini 2.0 Flash",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 8192,
+      "supportedGenerationMethods": ["generateContent", "countTokens"]
+    },
+    {
+      "name": "models/gemini-1.5-pro",
+      "displayName": "Gemini 1.5 Pro",
+      "description": "Gemini 1.5 Pro",
+      "inputTokenLimit": 2097152,
+      "outputTokenLimit": 8192,
+      "supportedGenerationMethods": ["generateContent", "countTokens"]
+    },
+    {
+      "name": "models/gemini-1.5-flash",
+      "displayName": "Gemini 1.5 Flash",
+      "description": "Gemini 1.5 Flash",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 8192,
+      "supportedGenerationMethods": ["generateContent", "countTokens"]
+    },
+    {
+      "name": "models/text-embedding-004",
+      "displayName": "Text Embedding 004",
+      "description": "Text embedding model",
+      "inputTokenLimit": 2048,
+      "outputTokenLimit": 1,
+      "supportedGenerationMethods": ["embedContent"]
+    },
+    {
+      "name": "models/gemini-2.0-flash-exp",
+      "displayName": "Gemini 2.0 Flash Experimental",
+      "description": "Experimental version",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 8192,
+      "supportedGenerationMethods": ["generateContent"]
+    }
+  ]
+}
