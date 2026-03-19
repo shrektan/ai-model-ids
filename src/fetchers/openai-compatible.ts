@@ -216,12 +216,6 @@ const PROVIDER_HEURISTICS: Record<string, ProviderHeuristics> = {
       if (id.includes('preview') || id.includes('beta') || id.includes('latest')) return 'preview';
       return 'live';
     },
-    filterModel(m, allModels) {
-      // Drop bare third-party IDs when a prefixed variant (e.g. "kimi/kimi-k2.5") exists.
-      // Models with "/" are always kept; bare IDs are only kept if no prefixed variant exists.
-      if (m.id.includes('/')) return true;
-      return !allModels.some(other => other.id.includes('/') && other.id.endsWith(`/${m.id}`));
-    },
   },
 
   Zhipu: {
