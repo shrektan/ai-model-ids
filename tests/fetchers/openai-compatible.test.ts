@@ -243,11 +243,11 @@ describe('createOpenAICompatibleFetcher', () => {
 
   describe('Google heuristics', () => {
     beforeEach(() => {
-      process.env['GOOGLE_API_KEY'] = 'test-key';
+      process.env['GEMINI_API_KEY'] = 'test-key';
     });
 
     afterEach(() => {
-      delete process.env['GOOGLE_API_KEY'];
+      delete process.env['GEMINI_API_KEY'];
     });
 
     it('calls the correct OpenAI-compatible endpoint', async () => {

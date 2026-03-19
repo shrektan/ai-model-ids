@@ -254,7 +254,7 @@ export const PROVIDERS: OpenAICompatibleConfig[] = [
   { provider: 'DeepSeek', baseUrl: 'https://api.deepseek.com',                                      envVar: 'DEEPSEEK_API_KEY' },
   { provider: 'xAI',      baseUrl: 'https://api.x.ai/v1',                                           envVar: 'XAI_API_KEY' },
   { provider: 'Moonshot', baseUrl: 'https://api.moonshot.cn/v1',                                     envVar: 'MOONSHOT_API_KEY' },
-  { provider: 'Google',   baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai',        envVar: 'GOOGLE_API_KEY' },
+  { provider: 'Google',   baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai',        envVar: 'GEMINI_API_KEY' },
   { provider: 'Qwen',     baseUrl: 'https://dashscope.aliyuncs.com/compatible-mode/v1',              envVar: 'DASHSCOPE_API_KEY' },
   { provider: 'Zhipu',    baseUrl: 'https://open.bigmodel.cn/api/paas/v4',                           envVar: 'ZHIPU_API_KEY' },
 ];
