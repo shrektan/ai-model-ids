@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { mkdir, writeFile, readFile } from 'fs/promises';
+import { mkdir, writeFile, readFile, stat } from 'fs/promises';
 import { z } from 'zod';
 import { ModelEntrySchema } from './types.ts';
 import type { ModelEntry } from './types.ts';
@@ -11,6 +11,7 @@ import { createOpenAICompatibleFetcher, PROVIDERS } from './fetchers/openai-comp
 import { fetchAnthropic } from './fetchers/anthropic.ts';
 
 const DIST_DIR = join(import.meta.dir, '..', 'dist');
+const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 
 const FETCHER_CONFIGS: FetcherConfig[] = [
   // 8 OpenAI-compatible providers
@@ -34,7 +35,18 @@ async function loadCache(): Promise<ModelEntry[] | null> {
   }
 }
 
+/** Check if the cache is fresh (less than CACHE_TTL_MS old). */
+async function isCacheFresh(): Promise<boolean> {
+  try {
+    const info = await stat(join(DIST_DIR, 'models.json'));
+    return Date.now() - info.mtimeMs < CACHE_TTL_MS;
+  } catch {
+    return false;
+  }
+}
+
 async function run(): Promise<void> {
+  const forceRefresh = process.argv.includes('--force');
   console.log('AI Model IDs — pipeline starting');
   console.log(`Timestamp: ${new Date().toISOString()}`);
   console.log('');
@@ -48,18 +60,31 @@ async function run(): Promise<void> {
     console.log('  No valid cache found (first run or corrupt)');
   }
 
-  // Step 1: Run all fetchers
-  console.log('');
-  console.log('Step 1: Fetching models from all providers...');
-  const { models, errors } = await aggregate(FETCHER_CONFIGS, cache);
+  // If cache is fresh and not forced, skip fetching and just regenerate HTML
+  let models: ModelEntry[];
+  let errors: Array<{ provider: string; error: string }> = [];
 
-  if (errors.length > 0) {
-    console.warn(`  ${errors.length} provider(s) failed (used cache fallback where available):`);
-    for (const { provider, error } of errors) {
-      console.warn(`    [${provider}] ${error}`);
+  if (cache && await isCacheFresh() && !forceRefresh) {
+    console.log('');
+    console.log('Step 1: Cache is fresh (< 1 hour old), skipping API calls.');
+    console.log('  Use --force to re-fetch. Example: bun run build --force');
+    models = cache;
+  } else {
+    // Step 1: Run all fetchers
+    console.log('');
+    console.log('Step 1: Fetching models from all providers...');
+    const result = await aggregate(FETCHER_CONFIGS, cache);
+    models = result.models;
+    errors = result.errors;
+
+    if (errors.length > 0) {
+      console.warn(`  ${errors.length} provider(s) failed (used cache fallback where available):`);
+      for (const { provider, error } of errors) {
+        console.warn(`    [${provider}] ${error}`);
+      }
     }
+    console.log(`  Total models fetched: ${models.length}`);
   }
-  console.log(`  Total models fetched: ${models.length}`);
 
   // Step 2: Aggregate → models.json
   const modelsJson = JSON.stringify(models, null, 2);
