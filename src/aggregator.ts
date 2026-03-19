@@ -47,22 +47,6 @@ export async function aggregate(
     }
   }
 
-  // Warn about duplicate model IDs across providers
-  const idProviders = new Map<string, string[]>();
-  for (const m of models) {
-    const providers = idProviders.get(m.id);
-    if (providers) {
-      providers.push(m.provider);
-    } else {
-      idProviders.set(m.id, [m.provider]);
-    }
-  }
-  for (const [id, providers] of idProviders) {
-    if (providers.length > 1) {
-      console.warn(`Duplicate model ID "${id}" found across providers: ${providers.join(', ')}`);
-    }
-  }
-
   // Total failure: no models fetched and no cache fallback available
   if (models.length === 0 && errors.length === configs.length) {
     throw new Error(
