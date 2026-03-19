@@ -438,7 +438,7 @@ export function generate(opts: GeneratorOptions): string {
     .col-id { min-width: 200px; }
     .col-provider { white-space: nowrap; min-width: 100px; }
     .col-caps { min-width: 120px; }
-    .col-context { white-space: nowrap; min-width: 70px; text-align: right; }
+    .col-context { white-space: nowrap; min-width: 70px; text-align: right; font-variant-numeric: tabular-nums; }
     .col-status { white-space: nowrap; min-width: 100px; }
 
     /* ── Copy button ──────────────────────────────────────────────── */
