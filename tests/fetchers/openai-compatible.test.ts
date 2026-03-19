@@ -275,7 +275,7 @@ describe('createOpenAICompatibleFetcher', () => {
       delete process.env['DASHSCOPE_API_KEY'];
     });
 
-    it('parses fixture and filters out third-party models', async () => {
+    it('parses fixture and returns all Qwen models including third-party', async () => {
       const fixture = JSON.parse(readFileSync(join(fixtureDir, 'qwen-models.json'), 'utf-8'));
       global.fetch = mock(() =>
         Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
@@ -285,14 +285,16 @@ describe('createOpenAICompatibleFetcher', () => {
       const models = await fetcher();
       const ids = models.map(m => m.id);
 
-      // Native Qwen models are kept
+      // Native Qwen models
       expect(ids).toContain('qwen-max');
       expect(ids).toContain('qwen-plus');
-      // Third-party models are filtered out
-      expect(ids).not.toContain('kimi-k2.5');
-      expect(ids).not.toContain('MiniMax-M2.1');
-      expect(ids).not.toContain('glm-4.7');
-      expect(models).toHaveLength(2);
+      // Third-party bare and prefixed IDs are all kept
+      expect(ids).toContain('kimi-k2.5');
+      expect(ids).toContain('kimi/kimi-k2.5');
+      expect(ids).toContain('MiniMax-M2.1');
+      expect(ids).toContain('MiniMax/MiniMax-M2.1');
+      expect(ids).toContain('glm-4.7');
+      expect(models).toHaveLength(7);
     });
   });
 
