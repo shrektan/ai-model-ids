@@ -452,8 +452,8 @@ export function generate(opts: GeneratorOptions): string {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: 28px;
-      min-height: 28px;
+      min-width: 36px;
+      min-height: 36px;
       transition: color 0.1s, border-color 0.1s;
     }
     .copy-btn:hover { color: var(--color-text); border-color: #999; }
