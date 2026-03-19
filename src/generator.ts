@@ -282,6 +282,7 @@ export function generate(opts: GeneratorOptions): string {
       display: flex;
       align-items: center;
       gap: 3px;
+      padding: var(--space-2) var(--space-2);
     }
 
     /* ── Toolbar ──────────────────────────────────────────────────── */
