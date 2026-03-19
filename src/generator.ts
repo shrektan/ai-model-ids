@@ -258,6 +258,7 @@ export function generate(opts: GeneratorOptions): string {
   <title>AI Model IDs — The canonical developer reference</title>
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="keywords" content="${escapeHtml(`AI model IDs, ${providers.sort().map(p => `${p} models`).join(', ')}, LLM model list, AI API model names, model identifier lookup, AI model reference`)}">
+  <meta name="google-site-verification" content="O0qbGX2hXl-GzO3OXUJFGyK9V7Wj-C37TGPq9sqQpbI">
   <link rel="canonical" href="${SITE_URL}/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate" type="application/atom+xml" title="AI Model IDs — Changes Feed" href="feed.xml">
