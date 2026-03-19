@@ -264,6 +264,73 @@ describe('createOpenAICompatibleFetcher', () => {
     });
   });
 
+  // ─── Qwen-specific heuristics ────────────────────────────────────
+
+  describe('Qwen heuristics', () => {
+    beforeEach(() => {
+      process.env['DASHSCOPE_API_KEY'] = 'test-key';
+    });
+
+    afterEach(() => {
+      delete process.env['DASHSCOPE_API_KEY'];
+    });
+
+    it('filters bare third-party IDs when prefixed variant exists', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'qwen-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Qwen'));
+      const models = await fetcher();
+      const ids = models.map(m => m.id);
+
+      expect(ids).not.toContain('kimi-k2.5');
+      expect(ids).not.toContain('MiniMax-M2.1');
+    });
+
+    it('keeps prefixed third-party IDs', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'qwen-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Qwen'));
+      const models = await fetcher();
+      const ids = models.map(m => m.id);
+
+      expect(ids).toContain('kimi/kimi-k2.5');
+      expect(ids).toContain('MiniMax/MiniMax-M2.1');
+    });
+
+    it('keeps bare IDs without prefixed variant', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'qwen-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Qwen'));
+      const models = await fetcher();
+      const ids = models.map(m => m.id);
+
+      expect(ids).toContain('glm-4.7');
+    });
+
+    it('keeps native Qwen models', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'qwen-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Qwen'));
+      const models = await fetcher();
+      const ids = models.map(m => m.id);
+
+      expect(ids).toContain('qwen-max');
+      expect(ids).toContain('qwen-plus');
+    });
+  });
+
   // ─── Provider config completeness ─────────────────────────────────
 
   describe('provider config', () => {

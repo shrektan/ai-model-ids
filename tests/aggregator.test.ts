@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'bun:test';
+import { describe, it, expect, mock, afterEach } from 'bun:test';
 import { aggregate } from '../src/aggregator.ts';
 import type { ModelEntry } from '../src/types.ts';
 
@@ -66,6 +66,27 @@ describe('aggregate', () => {
     ];
 
     await expect(aggregate(configs, null)).rejects.toThrow('All 2 providers failed');
+  });
+
+  it('warns about duplicate model IDs across providers', async () => {
+    const warnMock = mock(() => {});
+    const originalWarn = console.warn;
+    console.warn = warnMock as unknown as typeof console.warn;
+
+    const configs = [
+      { name: 'A', fetcher: async () => [makeModel('shared-model', 'A'), makeModel('a-only', 'A')] },
+      { name: 'B', fetcher: async () => [makeModel('shared-model', 'B'), makeModel('b-only', 'B')] },
+    ];
+
+    await aggregate(configs, null);
+
+    console.warn = originalWarn;
+
+    expect(warnMock).toHaveBeenCalledTimes(1);
+    const callArg = String(warnMock.mock.calls[0]);
+    expect(callArg).toContain('shared-model');
+    expect(callArg).toContain('A');
+    expect(callArg).toContain('B');
   });
 
   it('does NOT throw when all providers fail but cache exists', async () => {
