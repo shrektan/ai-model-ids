@@ -125,4 +125,53 @@ describe('fetchAnthropic', () => {
     const { fetchAnthropic } = await import('../../src/fetchers/anthropic.ts');
     await expect(fetchAnthropic()).rejects.toThrow('ANTHROPIC_API_KEY');
   });
+
+  it('paginates through multiple pages', async () => {
+    const page1 = {
+      data: [
+        {
+          id: 'claude-sonnet-4-20250514',
+          type: 'model',
+          display_name: 'Claude Sonnet 4',
+          created_at: '2025-05-14T00:00:00Z',
+          max_input_tokens: 200000,
+          max_tokens: 8192,
+          capabilities: { image_input: { supported: true }, pdf_input: { supported: true } },
+        },
+      ],
+      has_more: true,
+      last_id: 'claude-sonnet-4-20250514',
+    };
+
+    const page2 = {
+      data: [
+        {
+          id: 'claude-opus-4-5-20250310',
+          type: 'model',
+          display_name: 'Claude Opus 4.5',
+          created_at: '2025-03-10T00:00:00Z',
+          max_input_tokens: 200000,
+          max_tokens: 8192,
+          capabilities: { image_input: { supported: true }, pdf_input: { supported: true } },
+        },
+      ],
+      has_more: false,
+      last_id: null,
+    };
+
+    let callCount = 0;
+    global.fetch = mock((url: string) => {
+      callCount++;
+      const response = callCount === 1 ? page1 : page2;
+      return Promise.resolve(new Response(JSON.stringify(response), { status: 200 }));
+    }) as unknown as typeof fetch;
+
+    const { fetchAnthropic } = await import('../../src/fetchers/anthropic.ts');
+    const models = await fetchAnthropic();
+
+    expect(callCount).toBe(2);
+    expect(models).toHaveLength(2);
+    expect(models[0]!.id).toBe('claude-sonnet-4-20250514');
+    expect(models[1]!.id).toBe('claude-opus-4-5-20250310');
+  });
 });

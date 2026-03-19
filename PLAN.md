@@ -80,10 +80,15 @@ Each API-based fetcher reads credentials from environment variables:
 | Provider | Env Var |
 |----------|---------|
 | OpenAI | `OPENAI_API_KEY` |
-| Google | `GOOGLE_API_KEY` |
+| Anthropic | `ANTHROPIC_API_KEY` |
+| Google | `GEMINI_API_KEY` |
 | Mistral | `MISTRAL_API_KEY` |
 | DeepSeek | `DEEPSEEK_API_KEY` |
 | xAI | `XAI_API_KEY` |
+| Moonshot | `MOONSHOT_API_KEY` |
+| Qwen | `DASHSCOPE_API_KEY` |
+| Zhipu | `ZHIPU_API_KEY` |
+| MiniMax | _(static, no API key)_ |
 
 - **CI:** GitHub Secrets → env vars in workflow
 - **Local:** `.env` file (gitignored), `.env.example` shipped with all required keys

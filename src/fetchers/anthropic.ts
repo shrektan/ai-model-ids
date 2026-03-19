@@ -50,15 +50,15 @@ export const fetchAnthropic: Fetcher = async () => {
   const apiKey = process.env['ANTHROPIC_API_KEY'];
   if (!apiKey) throw new Error('ANTHROPIC_API_KEY is not set');
 
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  const allModels: ModelEntry[] = [];
+  let afterId: string | undefined;
 
-  try {
-    const allModels: ModelEntry[] = [];
-    let afterId: string | undefined;
+  // Paginate through all models — each page gets its own timeout
+  do {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
-    // Paginate through all models
-    do {
+    try {
       const url = new URL(API_URL);
       url.searchParams.set('limit', String(PAGE_LIMIT));
       if (afterId) url.searchParams.set('after_id', afterId);
@@ -95,10 +95,10 @@ export const fetchAnthropic: Fetcher = async () => {
       } else {
         break;
       }
-    } while (true);
+    } finally {
+      clearTimeout(timer);
+    }
+  } while (true);
 
-    return allModels;
-  } finally {
-    clearTimeout(timer);
-  }
+  return allModels;
 };

@@ -1,0 +1,35 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "glm-4-plus",
+      "object": "model",
+      "owned_by": "zhipu"
+    },
+    {
+      "id": "glm-4-vision-plus",
+      "object": "model",
+      "owned_by": "zhipu"
+    },
+    {
+      "id": "glm-3-turbo",
+      "object": "model",
+      "owned_by": "zhipu"
+    },
+    {
+      "id": "embedding-3",
+      "object": "model",
+      "owned_by": "zhipu"
+    },
+    {
+      "id": "cogview-4",
+      "object": "model",
+      "owned_by": "zhipu"
+    },
+    {
+      "id": "glm-5-preview",
+      "object": "model",
+      "owned_by": "zhipu"
+    }
+  ]
+}

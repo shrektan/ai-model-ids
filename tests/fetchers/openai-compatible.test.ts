@@ -298,6 +298,160 @@ describe('createOpenAICompatibleFetcher', () => {
     });
   });
 
+  // ─── Moonshot-specific heuristics ──────────────────────────────────
+
+  describe('Moonshot heuristics', () => {
+    beforeEach(() => {
+      process.env['MOONSHOT_API_KEY'] = 'test-key';
+    });
+
+    afterEach(() => {
+      delete process.env['MOONSHOT_API_KEY'];
+    });
+
+    it('parses fixture and assigns correct provider', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'moonshot-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Moonshot'));
+      const models = await fetcher();
+
+      expect(models.length).toBe(6);
+      for (const m of models) {
+        expect(m.provider).toBe('Moonshot');
+      }
+    });
+
+    it('infers context window from k-suffix pattern', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'moonshot-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Moonshot'));
+      const models = await fetcher();
+
+      const m8k = models.find(m => m.id === 'moonshot-v1-8k');
+      expect(m8k!.contextWindow).toBe(8000);
+
+      const m128k = models.find(m => m.id === 'moonshot-v1-128k');
+      expect(m128k!.contextWindow).toBe(128000);
+    });
+
+    it('infers image capability for vl models', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'moonshot-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Moonshot'));
+      const models = await fetcher();
+
+      const vl = models.find(m => m.id === 'kimi-vl-a3b');
+      expect(vl!.capabilities).toContain('image');
+    });
+
+    it('marks preview models correctly', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'moonshot-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Moonshot'));
+      const models = await fetcher();
+
+      const preview = models.find(m => m.id === 'moonshot-v1-preview');
+      expect(preview!.status).toBe('preview');
+    });
+  });
+
+  // ─── Zhipu-specific heuristics ────────────────────────────────────
+
+  describe('Zhipu heuristics', () => {
+    beforeEach(() => {
+      process.env['ZHIPU_API_KEY'] = 'test-key';
+    });
+
+    afterEach(() => {
+      delete process.env['ZHIPU_API_KEY'];
+    });
+
+    it('parses fixture and assigns correct provider', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'zhipu-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Zhipu'));
+      const models = await fetcher();
+
+      expect(models.length).toBe(6);
+      for (const m of models) {
+        expect(m.provider).toBe('Zhipu');
+      }
+    });
+
+    it('infers context window for GLM-4 models', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'zhipu-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Zhipu'));
+      const models = await fetcher();
+
+      const glm4 = models.find(m => m.id === 'glm-4-plus');
+      expect(glm4!.contextWindow).toBe(128_000);
+
+      const glm3 = models.find(m => m.id === 'glm-3-turbo');
+      expect(glm3!.contextWindow).toBe(8_192);
+    });
+
+    it('infers image capability for vision and cogview models', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'zhipu-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Zhipu'));
+      const models = await fetcher();
+
+      const vision = models.find(m => m.id === 'glm-4-vision-plus');
+      expect(vision!.capabilities).toContain('image');
+
+      const cogview = models.find(m => m.id === 'cogview-4');
+      expect(cogview!.capabilities).toEqual(['image']);
+    });
+
+    it('infers embedding capability', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'zhipu-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Zhipu'));
+      const models = await fetcher();
+
+      const embed = models.find(m => m.id === 'embedding-3');
+      expect(embed!.capabilities).toEqual(['embedding']);
+    });
+
+    it('marks preview models correctly', async () => {
+      const fixture = JSON.parse(readFileSync(join(fixtureDir, 'zhipu-models.json'), 'utf-8'));
+      global.fetch = mock(() =>
+        Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 })),
+      ) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(makeConfig('Zhipu'));
+      const models = await fetcher();
+
+      const preview = models.find(m => m.id === 'glm-5-preview');
+      expect(preview!.status).toBe('preview');
+    });
+  });
+
   // ─── Provider config completeness ─────────────────────────────────
 
   describe('provider config', () => {

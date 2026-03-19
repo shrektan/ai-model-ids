@@ -45,7 +45,7 @@ const PROVIDER_COLORS: Record<string, string> = {
   DeepSeek: '#4d6bfe',
   xAI: '#000000',
   Moonshot: '#6366f1',
-  Alibaba: '#ff6a00',
+  Qwen: '#ff6a00',
   Zhipu: '#2563eb',
   MiniMax: '#00b4d8',
 };
