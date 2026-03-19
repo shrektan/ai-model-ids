@@ -216,6 +216,11 @@ const PROVIDER_HEURISTICS: Record<string, ProviderHeuristics> = {
       if (id.includes('preview') || id.includes('beta') || id.includes('latest')) return 'preview';
       return 'live';
     },
+    filterModel(m) {
+      // DashScope lists third-party models — keep only Qwen's own models
+      const id = m.id.toLowerCase();
+      return id.includes('qwen') || id.includes('qvq') || id.includes('farui') || id.includes('paraformer') || id.includes('sambert') || id.includes('wanx');
+    },
   },
 
   Zhipu: {

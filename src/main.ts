@@ -18,6 +18,7 @@ import {
 } from './generator.ts';
 import { createOpenAICompatibleFetcher, PROVIDERS } from './fetchers/openai-compatible.ts';
 import { fetchAnthropic } from './fetchers/anthropic.ts';
+import { fetchMiniMax } from './fetchers/minimax.ts';
 
 const DIST_DIR = join(import.meta.dir, '..', 'dist');
 const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
@@ -30,6 +31,8 @@ const FETCHER_CONFIGS: FetcherConfig[] = [
   })),
   // Anthropic has its own API format
   { name: 'Anthropic', fetcher: fetchAnthropic },
+  // MiniMax has no /v1/models endpoint — curated static data
+  { name: 'MiniMax', fetcher: fetchMiniMax },
 ];
 
 /** Load and validate the cached models.json from dist/. Returns null if missing or corrupt. */

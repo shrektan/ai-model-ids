@@ -47,6 +47,7 @@ const PROVIDER_COLORS: Record<string, string> = {
   Moonshot: '#6366f1',
   Alibaba: '#ff6a00',
   Zhipu: '#2563eb',
+  MiniMax: '#00b4d8',
 };
 
 const STATUS_COLORS: Record<string, string> = {
