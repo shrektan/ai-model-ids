@@ -581,6 +581,10 @@ export function generate(opts: GeneratorOptions): string {
       animation: shimmer 1.5s infinite;
     }
     @keyframes shimmer { to { background-position: -200% 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .skeleton-bar { animation: none; }
+      .copy-btn, .copy-tooltip { transition: none; }
+    }
 
     /* ── Footer ───────────────────────────────────────────────────── */
     .site-footer {
