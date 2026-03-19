@@ -26,11 +26,23 @@
 - **Context:** v1 plan has design tokens embedded in PLAN.md. DESIGN.md would formalize these and add component specifications. Consider running `/design-consultation` to generate it. ~30min CC time.
 - **Depends on:** v1 shipped, visual language validated in production
 
-### RSS/Atom Feed
-- **What:** Subscribe to model changes (new models, deprecations) via RSS reader
-- **Why:** Developers who integrate multiple providers want push notifications when models change
-- **Context:** changelog.json already has the data — this is a format conversion to Atom XML. ~10min CC time.
-- **Depends on:** v1 shipped (changelog.json exists)
+### Submit Sitemap to Google Search Console
+- **What:** Submit sitemap.xml to Google Search Console after first GitHub Pages deploy
+- **Why:** Enables Google to discover and index the site faster. Without it, Google may take weeks to find the sitemap organically.
+- **Context:** Manual post-deploy task. Requires Google account and domain verification.
+- **Depends on:** Discoverability improvements deployed
+
+### Validate Structured Data
+- **What:** Run Google Rich Results Test on the deployed site to confirm JSON-LD and microdata parse correctly
+- **Why:** Validates that structured data enables rich search snippets
+- **Context:** One-time manual check at https://search.google.com/test/rich-results
+- **Depends on:** Discoverability improvements deployed
+
+### Share on Developer Communities
+- **What:** Post to Hacker News, Reddit r/programming, Twitter/X after SEO improvements ship
+- **Why:** Initial exposure builds backlinks and search authority
+- **Context:** The site needs some organic traffic to kickstart SEO. Developer communities are the natural audience.
+- **Depends on:** Discoverability improvements deployed, site verified working
 
 ## Phase 3
 

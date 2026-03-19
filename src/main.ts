@@ -6,7 +6,16 @@ import type { ModelEntry } from './types.ts';
 import { aggregate } from './aggregator.ts';
 import type { FetcherConfig } from './aggregator.ts';
 import { diff } from './differ.ts';
-import { generate } from './generator.ts';
+import {
+  generate,
+  generateFavicon,
+  generateOgImage,
+  generateSitemap,
+  generateRobotsTxt,
+  generateLlmsTxt,
+  generateLlmsFullTxt,
+  generateFeed,
+} from './generator.ts';
 import { createOpenAICompatibleFetcher, PROVIDERS } from './fetchers/openai-compatible.ts';
 import { fetchAnthropic } from './fetchers/anthropic.ts';
 
@@ -121,10 +130,29 @@ async function run(): Promise<void> {
   await mkdir(apiDir, { recursive: true });
   await writeFile(join(apiDir, 'models.json'), modelsJson);
 
+  // Step 6: Generate SEO & discoverability files
+  console.log('');
+  console.log('Step 6: Generating SEO & discoverability files...');
+  const generatedAt = new Date().toISOString();
+  await writeFile(join(DIST_DIR, 'favicon.svg'), generateFavicon());
+  await writeFile(join(DIST_DIR, 'og-image.svg'), generateOgImage(models.length, [...new Set(models.map(m => m.provider))].length));
+  await writeFile(join(DIST_DIR, 'sitemap.xml'), generateSitemap(models));
+  await writeFile(join(DIST_DIR, 'robots.txt'), generateRobotsTxt());
+  await writeFile(join(DIST_DIR, 'llms.txt'), generateLlmsTxt(models));
+  await writeFile(join(DIST_DIR, 'llms-full.txt'), generateLlmsFullTxt(models));
+  await writeFile(join(DIST_DIR, 'feed.xml'), generateFeed(changelog, generatedAt));
+
   console.log(`  dist/index.html`);
   console.log(`  dist/models.json`);
   console.log(`  dist/api/models.json`);
   console.log(`  dist/changelog.json`);
+  console.log(`  dist/favicon.svg`);
+  console.log(`  dist/og-image.svg`);
+  console.log(`  dist/sitemap.xml`);
+  console.log(`  dist/robots.txt`);
+  console.log(`  dist/llms.txt`);
+  console.log(`  dist/llms-full.txt`);
+  console.log(`  dist/feed.xml`);
   console.log('');
   console.log('Pipeline complete.');
 }

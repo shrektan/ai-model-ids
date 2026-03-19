@@ -55,6 +55,13 @@ const STATUS_COLORS: Record<string, string> = {
   deprecated: '#ef4444',
 };
 
+const SITE_URL = 'https://shrektan.github.io/ai-model-ids';
+
+// ── ID sanitization ──────────────────────────────────────────────────────────
+function sanitizeForId(str: string): string {
+  return str.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^-|-$/g, '');
+}
+
 // ── Formatting helpers ─────────────────────────────────────────────────────────
 
 function formatContextWindow(tokens: number | undefined): string {
@@ -96,7 +103,7 @@ function renderCapabilityTags(capabilities: string[]): RawHtml {
   return raw(tags);
 }
 
-function renderDesktopRow(model: ModelEntry): string {
+function renderDesktopRow(model: ModelEntry, isFirstOfProvider: boolean): string {
   const ariaLabel = [
     model.id,
     model.provider,
@@ -105,8 +112,15 @@ function renderDesktopRow(model: ModelEntry): string {
     model.status,
   ].filter(Boolean).join(', ');
 
+  const modelAnchorId = `model-${sanitizeForId(model.id)}`;
+  const providerAnchor = isFirstOfProvider
+    ? `<a id="provider-${sanitizeForId(model.provider)}" class="provider-anchor" aria-hidden="true"></a>`
+    : '';
+
   return html`
     <tr class="model-row"
+        id="${modelAnchorId}"
+        itemscope itemtype="https://schema.org/SoftwareApplication"
         data-id="${model.id}"
         data-provider="${model.provider}"
         data-capabilities="${model.capabilities.join(',')}"
@@ -115,12 +129,13 @@ function renderDesktopRow(model: ModelEntry): string {
         tabindex="0"
         aria-label="${ariaLabel}">
       <td class="col-copy">
+        ${raw(providerAnchor)}
         <button class="copy-btn" data-copy="${model.id}" title="Copy model ID" aria-label="Copy ${model.id}">
           <span class="copy-icon" aria-hidden="true">⎘</span>
         </button>
       </td>
-      <td class="col-id"><code class="model-id">${model.id}</code></td>
-      <td class="col-provider">${raw(providerDot(model.provider).value)} ${model.provider}</td>
+      <td class="col-id"><code class="model-id" itemprop="name">${model.id}</code></td>
+      <td class="col-provider">${raw(providerDot(model.provider).value)} ${raw(`<span itemprop="provider" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="${escapeHtml(model.provider)}">`)}${model.provider}${raw('</span>')}</td>
       <td class="col-caps">${raw(renderCapabilityTags(model.capabilities).value)}</td>
       <td class="col-context">${formatContextWindow(model.contextWindow)}</td>
       <td class="col-status">${raw(statusDot(model.status).value)} ${model.status}</td>
@@ -195,7 +210,12 @@ export function generate(opts: GeneratorOptions): string {
     return pCmp !== 0 ? pCmp : a.id.localeCompare(b.id);
   });
 
-  const tableRows = sortedModels.map(renderDesktopRow).join('');
+  const seenProviders = new Set<string>();
+  const tableRows = sortedModels.map(model => {
+    const isFirst = !seenProviders.has(model.provider);
+    seenProviders.add(model.provider);
+    return renderDesktopRow(model, isFirst);
+  }).join('');
 
   // Only show last 7 days of changes
   const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
@@ -211,14 +231,50 @@ export function generate(opts: GeneratorOptions): string {
 
   const formattedDate = formatDate(generatedAt);
 
+  const description = `Searchable, copy-paste ready reference for AI model IDs across all major providers. ${totalCount} models from ${providerCount} providers. Updated daily.`;
+  const ogTitle = `AI Model IDs — ${totalCount} models from ${providerCount} providers`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'AI Model IDs — The canonical developer reference',
+    description,
+    url: `${SITE_URL}/`,
+    dateModified: generatedAt.slice(0, 10),
+    inLanguage: 'en',
+    about: {
+      '@type': 'Thing',
+      name: 'AI Model Identifiers',
+      description: `API model ID strings for ${providers.sort().join(', ')}`,
+    },
+  };
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Model IDs — The canonical developer reference</title>
-  <meta name="description" content="Searchable, copy-paste ready reference for AI model IDs across all major providers. ${totalCount} models from ${providerCount} providers. Updated daily.">
-  <meta name="keywords" content="AI model IDs, OpenAI models, Anthropic models, Google Gemini, model API names, LLM model list">
+  <meta name="description" content="${escapeHtml(description)}">
+  <meta name="keywords" content="AI model IDs, OpenAI models, GPT-4o model ID, Anthropic models, Claude model ID, Google Gemini models, Gemini model ID, Mistral models, DeepSeek models, xAI Grok models, LLM model list, AI API model names, model identifier lookup, AI model reference">
+  <link rel="canonical" href="${SITE_URL}/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate" type="application/atom+xml" title="AI Model IDs — Changes Feed" href="feed.xml">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${escapeHtml(ogTitle)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${SITE_URL}/">
+  <meta property="og:image" content="${SITE_URL}/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(ogTitle)}">
+  <meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta name="twitter:image" content="${SITE_URL}/og-image.svg">
+  <!-- Structured Data -->
+  <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -228,9 +284,13 @@ export function generate(opts: GeneratorOptions): string {
   <div class="page-wrapper">
     <!-- Header -->
     <header class="site-header">
-      <h1 class="site-title">AI Model IDs</h1>
+      <div class="site-brand">
+        <h1 class="site-title">AI Model IDs</h1>
+        <p class="site-subtitle">The canonical developer reference for AI model IDs across all major providers.</p>
+      </div>
       <div class="header-actions">
         <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle filters" aria-expanded="false" aria-controls="filters-row">&#8801;</button>
+        <a class="header-link" href="feed.xml" target="_blank" rel="noopener">Feed</a>
         <a class="header-link" href="api/models.json" target="_blank" rel="noopener">JSON API</a>
         <a class="header-link" href="https://github.com/shrektan/ai-model-ids" target="_blank" rel="noopener noreferrer">GitHub &#8599;</a>
       </div>
@@ -660,4 +720,133 @@ export function generate(opts: GeneratorOptions): string {
   </script>
 </body>
 </html>`;
+}
+
+// ── Static file generators ────────────────────────────────────────────────────
+
+export function generateFavicon(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#1a1a1a"/>
+  <text x="16" y="22" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#fafafa">AI</text>
+</svg>`;
+}
+
+export function generateOgImage(totalCount: number, providerCount: number): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1a1a1a"/>
+  <text x="80" y="200" font-family="monospace" font-size="48" font-weight="bold" fill="#fafafa">AI Model IDs</text>
+  <line x1="80" y1="220" x2="420" y2="220" stroke="#555" stroke-width="2"/>
+  <text x="80" y="290" font-family="monospace" font-size="24" fill="#999">The canonical developer reference</text>
+  <text x="80" y="325" font-family="monospace" font-size="24" fill="#999">for AI model IDs</text>
+  <text x="80" y="420" font-family="monospace" font-size="20" fill="#22c55e">$</text>
+  <text x="110" y="420" font-family="monospace" font-size="20" fill="#888"> stats</text>
+  <text x="80" y="460" font-family="monospace" font-size="20" fill="#22c55e">&gt;</text>
+  <text x="110" y="460" font-family="monospace" font-size="20" fill="#fafafa"> ${totalCount}+ models &#x2502; ${providerCount} providers &#x2502; Updated daily</text>
+  <text x="80" y="560" font-family="monospace" font-size="16" fill="#555">shrektan.github.io/ai-model-ids</text>
+</svg>`;
+}
+
+export function generateSitemap(models: ModelEntry[]): string {
+  const today = new Date().toISOString().slice(0, 10);
+  const modelUrls = models.map(m =>
+    `  <url><loc>${SITE_URL}/#model-${sanitizeForId(m.id)}</loc></url>`
+  ).join('\n');
+  const providerUrls = [...new Set(models.map(m => m.provider))].map(p =>
+    `  <url><loc>${SITE_URL}/#provider-${sanitizeForId(p)}</loc></url>`
+  ).join('\n');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>${SITE_URL}/</loc><lastmod>${today}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>${SITE_URL}/api/models.json</loc><lastmod>${today}</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>${SITE_URL}/feed.xml</loc><lastmod>${today}</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+${providerUrls}
+${modelUrls}
+</urlset>`;
+}
+
+export function generateRobotsTxt(): string {
+  return `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
+}
+
+export function generateLlmsTxt(models: ModelEntry[]): string {
+  const providers = [...new Set(models.map(m => m.provider))].sort();
+  return `# AI Model IDs
+
+> The canonical developer reference for AI model IDs across all major providers.
+
+This site lists ${models.length} AI model IDs from ${providers.length} providers: ${providers.join(', ')}.
+
+Each model entry includes: raw API model ID, provider, capabilities, context window size, and status (live/preview/deprecated).
+
+## Links
+
+- Homepage: ${SITE_URL}/
+- JSON API: ${SITE_URL}/api/models.json
+- Atom Feed: ${SITE_URL}/feed.xml
+- Full model listing: ${SITE_URL}/llms-full.txt
+- GitHub: https://github.com/shrektan/ai-model-ids
+`;
+}
+
+export function generateLlmsFullTxt(models: ModelEntry[]): string {
+  const sorted = [...models].sort((a, b) => {
+    const pCmp = a.provider.localeCompare(b.provider);
+    return pCmp !== 0 ? pCmp : a.id.localeCompare(b.id);
+  });
+
+  let currentProvider = '';
+  const lines: string[] = [
+    '# AI Model IDs — Full Model Listing',
+    '',
+    `Generated: ${new Date().toISOString().slice(0, 10)}`,
+    `Total: ${models.length} models`,
+    '',
+  ];
+
+  for (const m of sorted) {
+    if (m.provider !== currentProvider) {
+      currentProvider = m.provider;
+      lines.push(`## ${currentProvider}`, '');
+    }
+    const ctx = m.contextWindow ? ` | Context: ${formatContextWindow(m.contextWindow)}` : '';
+    const caps = m.capabilities.length > 0 ? ` | Caps: ${m.capabilities.join(', ')}` : '';
+    lines.push(`- ${m.id} [${m.status}]${ctx}${caps}`);
+  }
+
+  return lines.join('\n') + '\n';
+}
+
+export function generateFeed(changelog: Changelog, generatedAt: string): string {
+  const recentChanges = changelog.changes.slice(0, 50);
+
+  const entries = recentChanges.map(entry => {
+    const title = entry.type === 'added' ? `Added: ${entry.model.id}`
+      : entry.type === 'removed' ? `Removed: ${entry.model.id}`
+      : `Modified: ${entry.model.id}`;
+    const id = `${SITE_URL}/#${entry.type}-${sanitizeForId(entry.model.id)}-${entry.date}`;
+
+    return `  <entry>
+    <title>${escapeHtml(title)}</title>
+    <id>${escapeHtml(id)}</id>
+    <link href="${SITE_URL}/#model-${sanitizeForId(entry.model.id)}"/>
+    <updated>${entry.date}T00:00:00Z</updated>
+    <summary>${escapeHtml(entry.type)} ${escapeHtml(entry.model.provider)} model: ${escapeHtml(entry.model.id)}</summary>
+  </entry>`;
+  }).join('\n');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AI Model IDs — Changes Feed</title>
+  <subtitle>Daily changes to AI model IDs across all major providers</subtitle>
+  <link href="${SITE_URL}/feed.xml" rel="self"/>
+  <link href="${SITE_URL}/"/>
+  <id>${SITE_URL}/</id>
+  <updated>${generatedAt}</updated>
+${entries}
+</feed>`;
 }

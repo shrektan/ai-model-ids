@@ -48,13 +48,21 @@ a:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; bor
   padding: var(--space-4) 0;
   border-bottom: 1px solid var(--color-border);
 }
+.site-brand { display: flex; flex-direction: column; }
 .site-title {
   font-family: var(--font-ui);
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
+.site-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.4;
+}
 .header-actions { display: flex; gap: var(--space-3); align-items: center; }
+.provider-anchor { position: absolute; }
 .header-link {
   font-size: 13px;
   color: var(--color-link);
@@ -405,6 +413,7 @@ a:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; bor
 @media (max-width: 639px) {
   .site-header { padding: var(--space-3) 0; }
   .site-title { font-size: 15px; }
+  .site-subtitle { font-size: 12px; }
 
   .hamburger-btn { display: flex; align-items: center; }
 
