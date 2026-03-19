@@ -280,6 +280,7 @@ export function createOpenAICompatibleFetcher(config: OpenAICompatibleConfig): F
           'Content-Type': 'application/json',
         },
         signal: controller.signal,
+        redirect: 'error',
       });
 
       if (!response.ok) {

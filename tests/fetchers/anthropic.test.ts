@@ -120,6 +120,23 @@ describe('fetchAnthropic', () => {
     expect(capturedHeaders['anthropic-version']).toBe('2023-06-01');
   });
 
+  it('sets redirect: error to prevent credential forwarding', async () => {
+    const fixture = JSON.parse(
+      readFileSync(join(fixtureDir, 'anthropic-models.json'), 'utf-8'),
+    );
+
+    let capturedRedirect: string | undefined;
+    global.fetch = mock((_url: string, opts: RequestInit) => {
+      capturedRedirect = opts.redirect;
+      return Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 }));
+    }) as unknown as typeof fetch;
+
+    const { fetchAnthropic } = await import('../../src/fetchers/anthropic.ts');
+    await fetchAnthropic();
+
+    expect(capturedRedirect).toBe('error');
+  });
+
   it('throws when API key is missing', async () => {
     delete process.env['ANTHROPIC_API_KEY'];
     const { fetchAnthropic } = await import('../../src/fetchers/anthropic.ts');

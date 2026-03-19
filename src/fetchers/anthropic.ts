@@ -70,6 +70,7 @@ export const fetchAnthropic: Fetcher = async () => {
           'content-type': 'application/json',
         },
         signal: controller.signal,
+        redirect: 'error',
       });
 
       if (!response.ok) {

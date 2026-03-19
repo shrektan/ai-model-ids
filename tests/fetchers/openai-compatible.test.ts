@@ -56,6 +56,19 @@ describe('createOpenAICompatibleFetcher', () => {
       expect(capturedHeaders['Authorization']).toBe('Bearer test-key');
     });
 
+    it('sets redirect: error to prevent credential forwarding', async () => {
+      const fixture = { data: [] };
+      let capturedRedirect: string | undefined;
+      global.fetch = mock((_url: string, opts: RequestInit) => {
+        capturedRedirect = opts.redirect;
+        return Promise.resolve(new Response(JSON.stringify(fixture), { status: 200 }));
+      }) as unknown as typeof fetch;
+
+      const fetcher = createOpenAICompatibleFetcher(config);
+      await fetcher();
+      expect(capturedRedirect).toBe('error');
+    });
+
     it('calls {baseUrl}/models', async () => {
       const fixture = { data: [] };
       let capturedUrl = '';

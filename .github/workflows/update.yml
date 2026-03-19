@@ -61,7 +61,7 @@ jobs:
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
           DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
           ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
-        run: bun run src/main.ts
+        run: bun run src/main.ts --force
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
