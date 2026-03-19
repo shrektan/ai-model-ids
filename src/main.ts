@@ -7,27 +7,19 @@ import { aggregate } from './aggregator.ts';
 import type { FetcherConfig } from './aggregator.ts';
 import { diff } from './differ.ts';
 import { generate } from './generator.ts';
-import { fetchOpenAI } from './fetchers/openai.ts';
-import { fetchGoogle } from './fetchers/google.ts';
-import { fetchMistral } from './fetchers/mistral.ts';
-import { fetchDeepSeek } from './fetchers/deepseek.ts';
-import { fetchXAI } from './fetchers/xai.ts';
+import { createOpenAICompatibleFetcher, PROVIDERS } from './fetchers/openai-compatible.ts';
 import { fetchAnthropic } from './fetchers/anthropic.ts';
-import { createYamlFetcher } from './fetchers/yaml.ts';
 
 const DIST_DIR = join(import.meta.dir, '..', 'dist');
-const DATA_DIR = join(import.meta.dir, '..', 'data');
 
 const FETCHER_CONFIGS: FetcherConfig[] = [
-  { name: 'OpenAI',    fetcher: fetchOpenAI },
-  { name: 'Google',    fetcher: fetchGoogle },
-  { name: 'Mistral',   fetcher: fetchMistral },
-  { name: 'DeepSeek',  fetcher: fetchDeepSeek },
-  { name: 'xAI',       fetcher: fetchXAI },
+  // 8 OpenAI-compatible providers
+  ...PROVIDERS.map(p => ({
+    name: p.provider,
+    fetcher: createOpenAICompatibleFetcher(p),
+  })),
+  // Anthropic has its own API format
   { name: 'Anthropic', fetcher: fetchAnthropic },
-  { name: 'Moonshot',  fetcher: createYamlFetcher(join(DATA_DIR, 'kimi.yaml')) },
-  { name: 'Alibaba',   fetcher: createYamlFetcher(join(DATA_DIR, 'qwen.yaml')) },
-  { name: 'Zhipu',     fetcher: createYamlFetcher(join(DATA_DIR, 'zhipu.yaml')) },
 ];
 
 /** Load and validate the cached models.json from dist/. Returns null if missing or corrupt. */
@@ -99,7 +91,7 @@ async function run(): Promise<void> {
   await writeFile(join(DIST_DIR, 'changelog.json'), JSON.stringify(changelog, null, 2));
   await writeFile(join(DIST_DIR, 'index.html'), htmlContent);
 
-  // Also create the api/ subdirectory symlink-like copy for /api/models.json route
+  // Also create the api/ subdirectory for /api/models.json route
   const apiDir = join(DIST_DIR, 'api');
   await mkdir(apiDir, { recursive: true });
   await writeFile(join(apiDir, 'models.json'), modelsJson);
