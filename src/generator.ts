@@ -664,7 +664,7 @@ export function generate(opts: GeneratorOptions): string {
   <div class="page-wrapper">
     <!-- Header -->
     <header class="site-header">
-      <span class="site-title">AI Model IDs</span>
+      <h1 class="site-title">AI Model IDs</h1>
       <div class="header-actions">
         <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle filters" aria-expanded="false" aria-controls="filters-row">&#8801;</button>
         <a class="header-link" href="api/models.json" target="_blank" rel="noopener">JSON API</a>
