@@ -276,6 +276,14 @@ export function generate(opts: GeneratorOptions): string {
   <meta name="twitter:image" content="${SITE_URL}/og-image.svg">
   <!-- Structured Data -->
   <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9943HC3NS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W9943HC3NS');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
