@@ -135,7 +135,14 @@ function renderDesktopRow(model: ModelEntry, isFirstOfProvider: boolean): string
           <span class="copy-icon" aria-hidden="true">⎘</span>
         </button>
       </td>
-      <td class="col-id"><code class="model-id" itemprop="name">${model.id}</code></td>
+      <td class="col-id">
+        <code class="model-id" itemprop="name">${model.id}</code>
+        <div class="mobile-detail">
+          ${raw(renderCapabilityTags(model.capabilities).value)}
+          ${model.contextWindow ? raw(html`<span class="mobile-context">${formatContextWindow(model.contextWindow)}</span>`) : raw('')}
+          <span class="mobile-status">${raw(statusDot(model.status).value)} ${model.status}</span>
+        </div>
+      </td>
       <td class="col-provider">${raw(providerDot(model.provider).value)} ${raw(`<span itemprop="provider" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="${escapeHtml(model.provider)}">`)}${model.provider}${raw('</span>')}</td>
       <td class="col-caps">${raw(renderCapabilityTags(model.capabilities).value)}</td>
       <td class="col-context">${formatContextWindow(model.contextWindow)}</td>
@@ -583,17 +590,6 @@ export function generate(opts: GeneratorOptions): string {
           const modelId = row.dataset.id;
           if (modelId) copyToClipboard(modelId, e.target);
         }
-      }
-    });
-
-    // ── Mobile: tap row to expand ─────────────────────────────────────
-    tbody.addEventListener('click', function(e) {
-      const row = e.target.closest('.model-row');
-      if (!row) return;
-      // Don't toggle if clicking copy button
-      if (e.target.closest('.copy-btn')) return;
-      if (window.innerWidth < 640) {
-        row.classList.toggle('expanded');
       }
     });
 

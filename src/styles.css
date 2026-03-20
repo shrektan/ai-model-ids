@@ -270,6 +270,9 @@ a:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; bor
   background: none;
 }
 
+/* ── Mobile detail (visible only on small screens) ────────────── */
+.mobile-detail { display: none; }
+
 /* ── Provider dot ─────────────────────────────────────────────── */
 .dot {
   display: inline-block;
@@ -428,7 +431,7 @@ a:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; bor
   }
   .filters-row.open { display: grid; }
 
-  /* Mobile: hide caps/context/status columns, show minimal */
+  /* Mobile: hide caps/context/status table columns, show inline detail instead */
   .models-table th.col-caps,
   .models-table th.col-context,
   .models-table th.col-status,
@@ -436,10 +439,26 @@ a:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; bor
   .model-row td.col-context,
   .model-row td.col-status { display: none; }
 
-  /* Mobile expand detail */
-  .model-row.expanded td.col-caps,
-  .model-row.expanded td.col-context,
-  .model-row.expanded td.col-status { display: table-cell; }
+  /* Mobile: show inline detail block beneath model ID */
+  .mobile-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-top: 4px;
+    align-items: center;
+  }
+  .mobile-detail .cap-tag { font-size: 10px; padding: 0 4px; }
+  .mobile-detail .mobile-context {
+    font-size: 11px;
+    color: #666;
+    font-variant-numeric: tabular-nums;
+  }
+  .mobile-detail .mobile-status {
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
 
   .copy-btn {
     min-width: 44px;
