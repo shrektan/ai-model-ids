@@ -390,9 +390,9 @@ export function generate(opts: GeneratorOptions): string {
             <th class="col-copy-hdr" aria-label="Copy"></th>
             <th data-sort="id" class="sortable" scope="col">Model ID</th>
             <th data-sort="provider" class="sortable" scope="col">Provider</th>
-            <th data-sort="caps" scope="col">Capabilities</th>
+            <th data-sort="caps" class="col-caps" scope="col">Capabilities</th>
             <th data-sort="context" class="sortable col-context" scope="col">Context</th>
-            <th data-sort="status" class="sortable" scope="col">Status</th>
+            <th data-sort="status" class="sortable col-status" scope="col">Status</th>
           </tr>
         </thead>
         <tbody id="models-tbody">
