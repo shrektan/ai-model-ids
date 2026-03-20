@@ -431,15 +431,7 @@ a:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; bor
   }
   .filters-row.open { display: grid; }
 
-  /* Mobile: hide caps/context/status table columns, show inline detail instead */
-  .models-table th.col-caps,
-  .models-table th.col-context,
-  .models-table th.col-status,
-  .model-row td.col-caps,
-  .model-row td.col-context,
-  .model-row td.col-status { display: none; }
-
-  /* Mobile: show inline detail block beneath model ID */
+  /* Mobile: show inline detail block beneath model ID (visible without scrolling) */
   .mobile-detail {
     display: flex;
     flex-wrap: wrap;
