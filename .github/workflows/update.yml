@@ -8,7 +8,7 @@ on:
     # Allow manual trigger from GitHub UI
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -65,6 +65,24 @@ jobs:
           DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
           ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
         run: bun run src/main.ts --force
+
+      - name: Commit models.json snapshot (history + keepalive)
+        # Persist the freshly built models.json into the tracked data/ dir.
+        # This gives a diffable history AND counts as repo activity, which
+        # stops GitHub from auto-disabling this scheduled workflow after
+        # 60 days of inactivity (the reason it stalled before).
+        run: |
+          mkdir -p data
+          cp dist/models.json data/models.json
+          git add data/models.json
+          if git diff --cached --quiet; then
+            echo "models.json unchanged; nothing to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: update models.json snapshot [skip ci]"
+            git push
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
