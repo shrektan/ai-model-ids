@@ -1105,7 +1105,7 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.5",
+    "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1114,7 +1114,62 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code-highspeed",
+    "id": "moonshot-v1-32k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 32000,
+    "status": "preview"
+  },
+  {
+    "id": "moonshot-v1-32k",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 32000,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-128k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 128000,
+    "status": "preview"
+  },
+  {
+    "id": "kimi-k2.7-code",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-auto",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.6",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.5",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1132,21 +1187,12 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-32k",
+    "id": "moonshot-v1-8k",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 32000,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
+    "contextWindow": 8000,
     "status": "live"
   },
   {
@@ -1158,52 +1204,6 @@
     ],
     "contextWindow": 8000,
     "status": "preview"
-  },
-  {
-    "id": "moonshot-v1-128k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 128000,
-    "status": "preview"
-  },
-  {
-    "id": "moonshot-v1-8k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 8000,
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-auto",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-32k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 32000,
-    "status": "preview"
-  },
-  {
-    "id": "kimi-k2.6",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
   },
   {
     "id": "models/gemini-2.5-flash",
@@ -1722,6 +1722,14 @@
       "text"
     ],
     "status": "preview"
+  },
+  {
+    "id": "qwen-image-2.0-pro-2026-06-22",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
   },
   {
     "id": "test-sre-gpu-auto-handle",
@@ -3212,14 +3220,6 @@
     "status": "live"
   },
   {
-    "id": "qwen-math-plus-0919",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen2.5-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
@@ -3229,7 +3229,25 @@
     "status": "live"
   },
   {
+    "id": "qwen2.5-1.5b-instruct",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
     "id": "qwen-turbo-0919",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "qwen2.5-math-1.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3271,12 +3289,11 @@
     "status": "preview"
   },
   {
-    "id": "qwen2.5-math-1.5b-instruct",
+    "id": "qwen-math-plus-0919",
     "provider": "Qwen",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -3288,7 +3305,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2.5-1.5b-instruct",
+    "id": "qwen2-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3306,25 +3323,16 @@
     "status": "live"
   },
   {
-    "id": "qwen2-1.5b-instruct",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "qwen2-0.5b-instruct",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
     "id": "qwen2-7b-instruct",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "qwen2-1.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3368,6 +3376,30 @@
     "status": "live"
   },
   {
+    "id": "qwen-72b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "codeqwen1.5-7b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen1.5-0.5b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "qwen-1.8b-chat",
     "provider": "Qwen",
     "capabilities": [
@@ -3384,15 +3416,7 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-0.5b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "codeqwen1.5-7b-chat",
+    "id": "qwen-7b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3408,47 +3432,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-72b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-7b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen1.5-14b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen1.5-32b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen1.5-1.8b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen1.5-72b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3465,6 +3449,30 @@
     "status": "live"
   },
   {
+    "id": "qwen1.5-14b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen1.5-72b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen1.5-32b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "qwen-max-1201",
     "provider": "Qwen",
     "capabilities": [
@@ -3474,7 +3482,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-max",
+    "id": "qwen-max-0107",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3501,7 +3509,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-max-0107",
+    "id": "qwen-max",
     "provider": "Qwen",
     "capabilities": [
       "text"
