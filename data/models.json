@@ -1105,34 +1105,7 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-32k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 32000,
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-8k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 8000,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.5",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code",
+    "id": "kimi-k2.6",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1151,23 +1124,6 @@
     "status": "preview"
   },
   {
-    "id": "moonshot-v1-auto",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code-highspeed",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
     "id": "moonshot-v1-128k-vision-preview",
     "provider": "Moonshot",
     "capabilities": [
@@ -1176,6 +1132,24 @@
     ],
     "contextWindow": 128000,
     "status": "preview"
+  },
+  {
+    "id": "kimi-k2.7-code",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-8k",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 8000,
+    "status": "live"
   },
   {
     "id": "moonshot-v1-8k-vision-preview",
@@ -1188,7 +1162,25 @@
     "status": "preview"
   },
   {
-    "id": "kimi-k2.6",
+    "id": "kimi-k2.5",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-32k",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 32000,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1203,6 +1195,14 @@
       "text"
     ],
     "contextWindow": 128000,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-auto",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
     "status": "live"
   },
   {
@@ -3587,6 +3587,18 @@
       "text"
     ],
     "contextWindow": 128000,
+    "status": "live"
+  },
+  {
+    "id": "claude-sonnet-5",
+    "provider": "Anthropic",
+    "name": "Claude Sonnet 5",
+    "capabilities": [
+      "text",
+      "image",
+      "pdf"
+    ],
+    "contextWindow": 1000000,
     "status": "live"
   },
   {
