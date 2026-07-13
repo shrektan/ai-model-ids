@@ -1153,6 +1153,15 @@
     "status": "live"
   },
   {
+    "id": "kimi-k2.6",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
     "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
@@ -1162,20 +1171,12 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-auto",
+    "id": "moonshot-v1-128k",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.5",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
+    "contextWindow": 128000,
     "status": "live"
   },
   {
@@ -1188,27 +1189,7 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-128k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 128000,
-    "status": "preview"
-  },
-  {
-    "id": "moonshot-v1-8k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 8000,
-    "status": "preview"
-  },
-  {
-    "id": "kimi-k2.7-code-highspeed",
+    "id": "kimi-k2.5",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1226,6 +1207,43 @@
     "status": "live"
   },
   {
+    "id": "moonshot-v1-128k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 128000,
+    "status": "preview"
+  },
+  {
+    "id": "kimi-k2.7-code-highspeed",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-auto",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-8k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 8000,
+    "status": "preview"
+  },
+  {
     "id": "moonshot-v1-32k-vision-preview",
     "provider": "Moonshot",
     "capabilities": [
@@ -1234,24 +1252,6 @@
     ],
     "contextWindow": 32000,
     "status": "preview"
-  },
-  {
-    "id": "moonshot-v1-128k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 128000,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.6",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
   },
   {
     "id": "models/gemini-2.5-flash",
