@@ -1153,15 +1153,7 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-auto",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.6",
+    "id": "kimi-k2.5",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1170,11 +1162,21 @@
     "status": "live"
   },
   {
-    "id": "kimi-k3",
+    "id": "moonshot-v1-128k",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
+    "contextWindow": 128000,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code-highspeed",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -1184,6 +1186,14 @@
       "text"
     ],
     "contextWindow": 32000,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k3",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
     "status": "live"
   },
   {
@@ -1197,17 +1207,7 @@
     "status": "preview"
   },
   {
-    "id": "moonshot-v1-128k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 128000,
-    "status": "preview"
-  },
-  {
-    "id": "kimi-k2.5",
+    "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1216,12 +1216,11 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code-highspeed",
+    "id": "moonshot-v1-auto",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -1235,15 +1234,6 @@
     "status": "preview"
   },
   {
-    "id": "moonshot-v1-128k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 128000,
-    "status": "live"
-  },
-  {
     "id": "moonshot-v1-8k",
     "provider": "Moonshot",
     "capabilities": [
@@ -1253,7 +1243,17 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code",
+    "id": "moonshot-v1-128k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 128000,
+    "status": "preview"
+  },
+  {
+    "id": "kimi-k2.6",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1778,6 +1778,14 @@
       "text"
     ],
     "status": "preview"
+  },
+  {
+    "id": "kimi/kimi-k3",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
   },
   {
     "id": "qwen3.7-text-embedding",
