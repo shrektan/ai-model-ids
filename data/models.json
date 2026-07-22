@@ -1,47 +1,5 @@
 [
   {
-    "id": "text-embedding-ada-002",
-    "provider": "OpenAI",
-    "capabilities": [
-      "embedding"
-    ],
-    "status": "deprecated"
-  },
-  {
-    "id": "whisper-1",
-    "provider": "OpenAI",
-    "capabilities": [
-      "audio"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "gpt-3.5-turbo",
-    "provider": "OpenAI",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 4096,
-    "status": "live"
-  },
-  {
-    "id": "tts-1",
-    "provider": "OpenAI",
-    "capabilities": [
-      "audio"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "gpt-3.5-turbo-16k",
-    "provider": "OpenAI",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 16384,
-    "status": "live"
-  },
-  {
     "id": "gpt-4-0613",
     "provider": "OpenAI",
     "capabilities": [
@@ -57,6 +15,55 @@
       "text"
     ],
     "contextWindow": 8192,
+    "status": "live"
+  },
+  {
+    "id": "gpt-3.5-turbo",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 4096,
+    "status": "live"
+  },
+  {
+    "id": "gpt-realtime-2.1-mini",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "gpt-5.6-sol",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "gpt-5.6-terra",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "gpt-5.6-luna",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "gpt-realtime-2.1",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
     "status": "live"
   },
   {
@@ -1015,44 +1022,37 @@
     "status": "live"
   },
   {
-    "id": "gpt-5.6-sol",
+    "id": "gpt-3.5-turbo-16k",
     "provider": "OpenAI",
     "capabilities": [
       "text"
+    ],
+    "contextWindow": 16384,
+    "status": "live"
+  },
+  {
+    "id": "tts-1",
+    "provider": "OpenAI",
+    "capabilities": [
+      "audio"
     ],
     "status": "live"
   },
   {
-    "id": "gpt-5.6-terra",
+    "id": "whisper-1",
     "provider": "OpenAI",
     "capabilities": [
-      "text"
+      "audio"
     ],
     "status": "live"
   },
   {
-    "id": "gpt-5.6-luna",
+    "id": "text-embedding-ada-002",
     "provider": "OpenAI",
     "capabilities": [
-      "text"
+      "embedding"
     ],
-    "status": "live"
-  },
-  {
-    "id": "gpt-realtime-2.1",
-    "provider": "OpenAI",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "gpt-realtime-2.1-mini",
-    "provider": "OpenAI",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
+    "status": "deprecated"
   },
   {
     "id": "deepseek-v4-flash",
@@ -1153,21 +1153,11 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-8k",
+    "id": "moonshot-v1-auto",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 8000,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code-highspeed",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -1179,51 +1169,6 @@
     ],
     "contextWindow": 8000,
     "status": "preview"
-  },
-  {
-    "id": "moonshot-v1-auto",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-128k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 128000,
-    "status": "preview"
-  },
-  {
-    "id": "kimi-k2.5",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.6",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
   },
   {
     "id": "moonshot-v1-128k",
@@ -1244,14 +1189,50 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-32k-vision-preview",
+    "id": "moonshot-v1-128k-vision-preview",
     "provider": "Moonshot",
     "capabilities": [
       "text",
       "image"
     ],
-    "contextWindow": 32000,
+    "contextWindow": 128000,
     "status": "preview"
+  },
+  {
+    "id": "kimi-k2.6",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code-highspeed",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.5",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-8k",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 8000,
+    "status": "live"
   },
   {
     "id": "kimi-k3",
@@ -1260,6 +1241,25 @@
       "text"
     ],
     "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-32k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 32000,
+    "status": "preview"
   },
   {
     "id": "models/gemini-2.5-flash",
