@@ -1153,34 +1153,7 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-8k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 8000,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.6",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
     "id": "kimi-k2.7-code-highspeed",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1197,50 +1170,13 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.5",
+    "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
     "contextWindow": 131072,
     "status": "live"
-  },
-  {
-    "id": "moonshot-v1-8k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 8000,
-    "status": "preview"
-  },
-  {
-    "id": "kimi-k3",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-32k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 32000,
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-32k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 32000,
-    "status": "preview"
   },
   {
     "id": "moonshot-v1-128k",
@@ -1260,6 +1196,70 @@
     ],
     "contextWindow": 128000,
     "status": "preview"
+  },
+  {
+    "id": "moonshot-v1-32k",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 32000,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.5",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-32k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 32000,
+    "status": "preview"
+  },
+  {
+    "id": "kimi-k3",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-8k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 8000,
+    "status": "preview"
+  },
+  {
+    "id": "moonshot-v1-8k",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 8000,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.6",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
   },
   {
     "id": "models/gemini-2.5-flash",
@@ -1778,6 +1778,22 @@
       "text"
     ],
     "status": "preview"
+  },
+  {
+    "id": "qwen3.7-flash-2026-07-15",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen3.7-flash",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
   },
   {
     "id": "kimi/kimi-k3",
@@ -3350,6 +3366,50 @@
     "status": "live"
   },
   {
+    "id": "qwen-math-plus",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen2.5-math-1.5b-instruct",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "qwen-turbo-0919",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "qwen2.5-0.5b-instruct",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "qwen-plus-latest",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "preview"
+  },
+  {
     "id": "qwen-math-turbo",
     "provider": "Qwen",
     "capabilities": [
@@ -3382,60 +3442,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-math-plus",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-plus-latest",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "preview"
-  },
-  {
-    "id": "qwen2.5-0.5b-instruct",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
     "id": "qwen2.5-1.5b-instruct",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "qwen-turbo-0919",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "qwen2.5-math-1.5b-instruct",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "qwen2-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3453,7 +3460,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2-1.5b-instruct",
+    "id": "qwen2-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3463,6 +3470,15 @@
   },
   {
     "id": "qwen2-57b-a14b-instruct",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "qwen2-1.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3506,7 +3522,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-14b-chat",
+    "id": "qwen1.5-0.5b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3522,7 +3538,7 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-0.5b-chat",
+    "id": "qwen-1.8b-longcontext-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3531,14 +3547,6 @@
   },
   {
     "id": "qwen-1.8b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-1.8b-longcontext-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3562,20 +3570,11 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-14b-chat",
+    "id": "qwen-14b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
     ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-max-longcontext",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 1000000,
     "status": "live"
   },
   {
@@ -3588,7 +3587,7 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-1.8b-chat",
+    "id": "qwen1.5-14b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3612,12 +3611,20 @@
     "status": "live"
   },
   {
-    "id": "qwen-plus",
+    "id": "qwen-max-longcontext",
     "provider": "Qwen",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
+    "contextWindow": 1000000,
+    "status": "live"
+  },
+  {
+    "id": "qwen1.5-1.8b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
     "status": "live"
   },
   {
@@ -3630,7 +3637,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-max",
+    "id": "qwen-max-0107",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3639,7 +3646,16 @@
     "status": "live"
   },
   {
-    "id": "qwen-max-0107",
+    "id": "qwen-plus",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "qwen-max",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3717,6 +3733,18 @@
       "text"
     ],
     "contextWindow": 128000,
+    "status": "live"
+  },
+  {
+    "id": "claude-opus-5",
+    "provider": "Anthropic",
+    "name": "Claude Opus 5",
+    "capabilities": [
+      "text",
+      "image",
+      "pdf"
+    ],
+    "contextWindow": 1000000,
     "status": "live"
   },
   {
