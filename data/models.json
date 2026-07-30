@@ -1071,6 +1071,14 @@
     "status": "live"
   },
   {
+    "id": "ra-gpt-5.6-sol",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "deepseek-v4-flash",
     "provider": "DeepSeek",
     "capabilities": [
@@ -1169,29 +1177,21 @@
     "status": "live"
   },
   {
+    "id": "kimi-k2.7-code",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
     "id": "moonshot-v1-128k",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
     "contextWindow": 128000,
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-auto",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-8k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 8000,
     "status": "live"
   },
   {
@@ -1205,23 +1205,23 @@
     "status": "preview"
   },
   {
-    "id": "moonshot-v1-8k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 8000,
-    "status": "preview"
-  },
-  {
-    "id": "kimi-k2.7-code",
+    "id": "kimi-k2.5",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
     "contextWindow": 131072,
     "status": "live"
+  },
+  {
+    "id": "moonshot-v1-32k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 32000,
+    "status": "preview"
   },
   {
     "id": "kimi-k2.7-code-highspeed",
@@ -1242,6 +1242,14 @@
     "status": "live"
   },
   {
+    "id": "kimi-k3",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "kimi-k2.6",
     "provider": "Moonshot",
     "capabilities": [
@@ -1251,31 +1259,31 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-32k-vision-preview",
+    "id": "moonshot-v1-auto",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-8k",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 8000,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-8k-vision-preview",
     "provider": "Moonshot",
     "capabilities": [
       "text",
       "image"
     ],
-    "contextWindow": 32000,
+    "contextWindow": 8000,
     "status": "preview"
-  },
-  {
-    "id": "kimi-k3",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.5",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
   },
   {
     "id": "models/gemini-2.5-flash",
