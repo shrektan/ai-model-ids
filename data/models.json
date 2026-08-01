@@ -1169,30 +1169,11 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.5",
+    "id": "moonshot-v1-auto",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-128k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 128000,
     "status": "live"
   },
   {
@@ -1202,14 +1183,6 @@
       "text"
     ],
     "contextWindow": 8000,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k3",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
     "status": "live"
   },
   {
@@ -1223,39 +1196,12 @@
     "status": "preview"
   },
   {
-    "id": "moonshot-v1-32k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 32000,
-    "status": "preview"
-  },
-  {
-    "id": "kimi-k2.7-code-highspeed",
+    "id": "moonshot-v1-128k",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-auto",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-32k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 32000,
+    "contextWindow": 128000,
     "status": "live"
   },
   {
@@ -1276,6 +1222,60 @@
     ],
     "contextWindow": 128000,
     "status": "preview"
+  },
+  {
+    "id": "kimi-k3",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code-highspeed",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-32k",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 32000,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.5",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-32k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 32000,
+    "status": "preview"
+  },
+  {
+    "id": "kimi-k2.7-code",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
   },
   {
     "id": "models/gemini-2.5-flash",
@@ -1794,6 +1794,14 @@
       "text"
     ],
     "status": "preview"
+  },
+  {
+    "id": "deepseek-v4-flash-0731",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
   },
   {
     "id": "qwen-audio-3.0-asr-flash",
