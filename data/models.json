@@ -621,14 +621,6 @@
     "status": "live"
   },
   {
-    "id": "gpt-realtime-mini-2025-10-06",
-    "provider": "OpenAI",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "sora-2",
     "provider": "OpenAI",
     "capabilities": [
@@ -1169,6 +1161,14 @@
     "status": "live"
   },
   {
+    "id": "moonshot-v1-auto",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "moonshot-v1-32k-vision-preview",
     "provider": "Moonshot",
     "capabilities": [
@@ -1179,7 +1179,7 @@
     "status": "preview"
   },
   {
-    "id": "kimi-k2.7-code-highspeed",
+    "id": "kimi-k2.5",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1188,32 +1188,21 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-128k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 128000,
-    "status": "preview"
-  },
-  {
-    "id": "moonshot-v1-8k-vision-preview",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text",
-      "image"
-    ],
-    "contextWindow": 8000,
-    "status": "preview"
-  },
-  {
-    "id": "kimi-k2.5",
+    "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
     "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-32k",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 32000,
     "status": "live"
   },
   {
@@ -1234,30 +1223,33 @@
     "status": "live"
   },
   {
-    "id": "moonshot-v1-32k",
+    "id": "moonshot-v1-128k-vision-preview",
     "provider": "Moonshot",
     "capabilities": [
-      "text"
-    ],
-    "contextWindow": 32000,
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-128k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
+      "text",
+      "image"
     ],
     "contextWindow": 128000,
-    "status": "live"
+    "status": "preview"
   },
   {
-    "id": "moonshot-v1-auto",
+    "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
+    "contextWindow": 131072,
     "status": "live"
+  },
+  {
+    "id": "moonshot-v1-8k-vision-preview",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text",
+      "image"
+    ],
+    "contextWindow": 8000,
+    "status": "preview"
   },
   {
     "id": "kimi-k2.6",
@@ -1269,12 +1261,12 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code",
+    "id": "moonshot-v1-128k",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
+    "contextWindow": 128000,
     "status": "live"
   },
   {
