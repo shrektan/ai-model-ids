@@ -1135,6 +1135,14 @@
     "status": "live"
   },
   {
+    "id": "grok-imagine-image-2.0",
+    "provider": "xAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "grok-imagine-image-quality",
     "provider": "xAI",
     "capabilities": [
@@ -1161,37 +1169,12 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.6",
+    "id": "moonshot-v1-8k",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "moonshot-v1-auto",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k3",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
+    "contextWindow": 8000,
     "status": "live"
   },
   {
@@ -1203,15 +1186,6 @@
     ],
     "contextWindow": 8000,
     "status": "preview"
-  },
-  {
-    "id": "moonshot-v1-8k",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 8000,
-    "status": "live"
   },
   {
     "id": "moonshot-v1-32k-vision-preview",
@@ -1251,6 +1225,15 @@
     "status": "live"
   },
   {
+    "id": "kimi-k2.6",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
     "id": "moonshot-v1-128k-vision-preview",
     "provider": "Moonshot",
     "capabilities": [
@@ -1259,6 +1242,31 @@
     ],
     "contextWindow": 128000,
     "status": "preview"
+  },
+  {
+    "id": "kimi-k3",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "moonshot-v1-auto",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
   },
   {
     "id": "kimi-k2.7-code-highspeed",
@@ -3415,12 +3423,13 @@
     "status": "live"
   },
   {
-    "id": "qwen-math-turbo",
+    "id": "qwen-plus-latest",
     "provider": "Qwen",
     "capabilities": [
       "text"
     ],
-    "status": "live"
+    "contextWindow": 131072,
+    "status": "preview"
   },
   {
     "id": "qwen-math-plus-latest",
@@ -3447,7 +3456,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2.5-0.5b-instruct",
+    "id": "qwen2.5-math-1.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3456,16 +3465,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-plus-latest",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "preview"
-  },
-  {
-    "id": "qwen2.5-math-1.5b-instruct",
+    "id": "qwen2.5-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3500,12 +3500,11 @@
     "status": "live"
   },
   {
-    "id": "qwen2-57b-a14b-instruct",
+    "id": "qwen-math-turbo",
     "provider": "Qwen",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -3519,6 +3518,15 @@
   },
   {
     "id": "qwen2-7b-instruct",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "qwen2-57b-a14b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
