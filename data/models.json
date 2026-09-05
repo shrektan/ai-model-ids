@@ -1063,6 +1063,14 @@
     "status": "live"
   },
   {
+    "id": "gpt-6-astra",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "deepseek-v4-flash",
     "provider": "DeepSeek",
     "capabilities": [
