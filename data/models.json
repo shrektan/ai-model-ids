@@ -1071,7 +1071,39 @@
     "status": "live"
   },
   {
-    "id": "deepseek-v4-flash",
+    "id": "gpt-image-2.5-flare",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "gpt-image-2.5-sunburst",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "gpt-image-2.5-flare-2026-09-08",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "gpt-image-2.5-sunburst-2026-09-08",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "deepseek-flash",
     "provider": "DeepSeek",
     "capabilities": [
       "text"
@@ -1083,15 +1115,6 @@
     "provider": "DeepSeek",
     "capabilities": [
       "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "deepseek-v4-flash-vision-exp",
-    "provider": "DeepSeek",
-    "capabilities": [
-      "text",
-      "image"
     ],
     "status": "live"
   },
@@ -1202,15 +1225,6 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.6",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
     "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
@@ -1221,6 +1235,15 @@
   },
   {
     "id": "kimi-k2.7-code",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.6",
     "provider": "Moonshot",
     "capabilities": [
       "text"
