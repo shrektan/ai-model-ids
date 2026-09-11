@@ -1103,6 +1103,14 @@
     "status": "live"
   },
   {
+    "id": "gpt-live-1",
+    "provider": "OpenAI",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "deepseek-flash",
     "provider": "DeepSeek",
     "capabilities": [
@@ -1217,20 +1225,20 @@
     "status": "live"
   },
   {
-    "id": "kimi-k3",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
     "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k3",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
     "status": "live"
   },
   {
