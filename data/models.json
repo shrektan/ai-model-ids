@@ -1225,7 +1225,7 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code-highspeed",
+    "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1242,7 +1242,7 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code",
+    "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
