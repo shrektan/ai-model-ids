@@ -1225,20 +1225,20 @@
     "status": "live"
   },
   {
+    "id": "kimi-k3",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
     "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k3",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
     "status": "live"
   },
   {
@@ -1776,6 +1776,14 @@
       "text"
     ],
     "status": "preview"
+  },
+  {
+    "id": "qwen3.8-omni-flash",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
   },
   {
     "id": "qwen3.8-livetranslate-flash-realtime",
@@ -3921,6 +3929,15 @@
   },
   {
     "id": "glm-5.3-flash",
+    "provider": "Zhipu",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 128000,
+    "status": "live"
+  },
+  {
+    "id": "glm-5.3-flashx",
     "provider": "Zhipu",
     "capabilities": [
       "text"
