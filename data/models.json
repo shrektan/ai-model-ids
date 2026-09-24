@@ -1233,7 +1233,25 @@
     "status": "live"
   },
   {
+    "id": "kimi-k2.7-code-highspeed",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
     "id": "kimi-k2.7-code",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.6",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1247,24 +1265,6 @@
     "capabilities": [
       "text"
     ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.6",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code-highspeed",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
     "status": "live"
   },
   {
