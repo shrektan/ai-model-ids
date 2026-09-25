@@ -1233,12 +1233,11 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code-highspeed",
+    "id": "kimi-k3",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -1260,11 +1259,12 @@
     "status": "live"
   },
   {
-    "id": "kimi-k3",
+    "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
+    "contextWindow": 131072,
     "status": "live"
   },
   {
