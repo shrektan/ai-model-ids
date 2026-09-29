@@ -1241,15 +1241,6 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code-highspeed",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
     "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
@@ -1260,6 +1251,15 @@
   },
   {
     "id": "kimi-k2.6",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -4008,6 +4008,18 @@
       "text"
     ],
     "contextWindow": 128000,
+    "status": "live"
+  },
+  {
+    "id": "claude-sonnet-5-5",
+    "provider": "Anthropic",
+    "name": "Claude Sonnet 5.5",
+    "capabilities": [
+      "text",
+      "image",
+      "pdf"
+    ],
+    "contextWindow": 1000000,
     "status": "live"
   },
   {
