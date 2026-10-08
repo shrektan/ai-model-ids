@@ -4028,6 +4028,18 @@
     "status": "live"
   },
   {
+    "id": "claude-haiku-5-5",
+    "provider": "Anthropic",
+    "name": "Claude Haiku 5.5",
+    "capabilities": [
+      "text",
+      "image",
+      "pdf"
+    ],
+    "contextWindow": 1000000,
+    "status": "live"
+  },
+  {
     "id": "claude-sonnet-5-5",
     "provider": "Anthropic",
     "name": "Claude Sonnet 5.5",
@@ -4180,7 +4192,7 @@
       "image",
       "pdf"
     ],
-    "contextWindow": 1000000,
+    "contextWindow": 200000,
     "status": "live"
   },
   {
