@@ -1242,15 +1242,7 @@
     "status": "live"
   },
   {
-    "id": "kimi-k3",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code-highspeed",
+    "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1268,12 +1260,20 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code",
+    "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
     "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k3",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
     "status": "live"
   },
   {
@@ -2735,22 +2735,6 @@
     "status": "live"
   },
   {
-    "id": "qwen3-tts-vd-2026-01-26",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen3-tts-instruct-flash-2026-01-26",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen3-tts-instruct-flash",
     "provider": "Qwen",
     "capabilities": [
@@ -2776,22 +2760,6 @@
   },
   {
     "id": "qwen3-max",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen3-tts-instruct-flash-realtime-2026-01-22",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen3-tts-instruct-flash-realtime",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -2896,47 +2864,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-image-edit-max-2026-01-16",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-image-edit-max",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-image-plus-2026-01-09",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen-flash-character",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-image-max-2025-12-30",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-image-max",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -2969,22 +2897,6 @@
     "status": "live"
   },
   {
-    "id": "qwen3-tts-vd-realtime-2025-12-16",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-image-edit-plus-2025-12-15",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "deepseek-v3.2",
     "provider": "Qwen",
     "capabilities": [
@@ -2994,14 +2906,6 @@
   },
   {
     "id": "qwen3-omni-flash-2025-12-01",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen3-omni-flash-realtime-2025-12-01",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3031,14 +2935,6 @@
       "text"
     ],
     "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "qwen3-tts-vc-realtime-2025-11-27",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
     "status": "live"
   },
   {
@@ -3108,14 +3004,6 @@
     "status": "live"
   },
   {
-    "id": "qwen-image-edit-plus-2025-10-30",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen-image-edit-plus",
     "provider": "Qwen",
     "capabilities": [
@@ -3125,14 +3013,6 @@
   },
   {
     "id": "qwen-deep-search-planning",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen3-asr-flash-realtime-2025-10-27",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3174,31 +3054,7 @@
     "status": "live"
   },
   {
-    "id": "qwen3-tts-flash-2025-09-18",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen3-tts-flash-realtime-2025-09-18",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen3-tts-flash-realtime",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen3-omni-flash-realtime",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3231,22 +3087,6 @@
   },
   {
     "id": "qwen3-s2s-flash-realtime-2025-09-22",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen3-livetranslate-flash-realtime",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen3-livetranslate-flash-realtime-2025-09-22",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3345,14 +3185,6 @@
     "status": "live"
   },
   {
-    "id": "qwen3-coder-plus-2025-09-23",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen3-max-2025-09-23",
     "provider": "Qwen",
     "capabilities": [
@@ -3428,14 +3260,6 @@
     "status": "live"
   },
   {
-    "id": "qwen3-coder-plus-2025-07-22",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen-plus-2025-07-14",
     "provider": "Qwen",
     "capabilities": [
@@ -3462,22 +3286,6 @@
   },
   {
     "id": "qwen-mt-plus",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-tts-2025-05-22",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qvq-plus",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3573,14 +3381,6 @@
     "status": "live"
   },
   {
-    "id": "deepseek-r1-distill-qwen-7b",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "deepseek-r1",
     "provider": "Qwen",
     "capabilities": [
@@ -3631,7 +3431,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-turbo-0919",
+    "id": "qwen2.5-1.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3666,30 +3466,6 @@
     "status": "preview"
   },
   {
-    "id": "qwen-math-turbo",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-math-plus-latest",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "preview"
-  },
-  {
-    "id": "qwen-math-plus-0919",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen-coder-turbo",
     "provider": "Qwen",
     "capabilities": [
@@ -3698,7 +3474,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2.5-1.5b-instruct",
+    "id": "qwen2.5-math-1.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3707,7 +3483,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2.5-math-1.5b-instruct",
+    "id": "qwen-turbo-0919",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3725,7 +3501,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2-7b-instruct",
+    "id": "qwen2-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3734,7 +3510,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2-0.5b-instruct",
+    "id": "qwen2-7b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3787,23 +3563,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-72b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen-14b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "codeqwen1.5-7b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3819,7 +3579,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-7b-chat",
+    "id": "qwen-1.8b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3835,7 +3595,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-1.8b-chat",
+    "id": "qwen-7b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3843,7 +3603,7 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-14b-chat",
+    "id": "qwen-72b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3859,7 +3619,7 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-72b-chat",
+    "id": "qwen1.5-1.8b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3876,6 +3636,22 @@
     "status": "live"
   },
   {
+    "id": "qwen1.5-72b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen1.5-14b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "qwen-max-1201",
     "provider": "Qwen",
     "capabilities": [
@@ -3885,11 +3661,12 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-1.8b-chat",
+    "id": "qwen-plus",
     "provider": "Qwen",
     "capabilities": [
       "text"
     ],
+    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -3903,15 +3680,6 @@
   },
   {
     "id": "qwen-turbo",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "qwen-plus",
     "provider": "Qwen",
     "capabilities": [
       "text"
