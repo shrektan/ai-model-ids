@@ -1251,12 +1251,11 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code-highspeed",
+    "id": "kimi-k3",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -1269,11 +1268,12 @@
     "status": "live"
   },
   {
-    "id": "kimi-k3",
+    "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
+    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -1795,6 +1795,14 @@
     "status": "preview"
   },
   {
+    "id": "MiniMax/MiniMax-M3.1-Flash",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
     "provider": "Qwen",
     "capabilities": [
@@ -2136,14 +2144,6 @@
   },
   {
     "id": "kimi/kimi-k2.7-code-highspeed",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "xiaomi/mimo-v2.5-pro",
     "provider": "Qwen",
     "capabilities": [
       "text"
