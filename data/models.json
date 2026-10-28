@@ -1250,29 +1250,20 @@
     "status": "live"
   },
   {
-    "id": "kimi-k3",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
     "id": "kimi-k2.7-code-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
     "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k3",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
     "status": "live"
   },
   {
@@ -1285,6 +1276,15 @@
   },
   {
     "id": "kimi-k2.6",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1809,6 +1809,31 @@
       "text"
     ],
     "status": "preview"
+  },
+  {
+    "id": "vanchin/deepseek-v4.1-flash-1017",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen-audio-3.1-realtime-flash",
+    "provider": "Qwen",
+    "capabilities": [
+      "text",
+      "audio"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "cmaas-glm-5.3",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
   },
   {
     "id": "kimi/kimi-k3.1-pro-highspeed",
@@ -3056,7 +3081,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2.5-1.5b-instruct",
+    "id": "qwen2.5-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3074,6 +3099,24 @@
     "status": "live"
   },
   {
+    "id": "qwen-plus-latest",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "preview"
+  },
+  {
+    "id": "qwen2.5-1.5b-instruct",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
     "id": "qwen-turbo-0919",
     "provider": "Qwen",
     "capabilities": [
@@ -3083,22 +3126,13 @@
     "status": "live"
   },
   {
-    "id": "qwen2.5-0.5b-instruct",
+    "id": "qwen2-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
     ],
     "contextWindow": 131072,
     "status": "live"
-  },
-  {
-    "id": "qwen-plus-latest",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "preview"
   },
   {
     "id": "qwen2-7b-instruct",
@@ -3111,15 +3145,6 @@
   },
   {
     "id": "qwen2-57b-a14b-instruct",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "qwen2-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3154,31 +3179,7 @@
     "status": "live"
   },
   {
-    "id": "qwen-72b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-1.8b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen-1.8b-longcontext-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-14b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3202,7 +3203,23 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-72b-chat",
+    "id": "qwen-14b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen-72b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen-1.8b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3227,6 +3244,14 @@
   },
   {
     "id": "qwen1.5-32b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen1.5-72b-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
