@@ -1207,14 +1207,6 @@
     "status": "live"
   },
   {
-    "id": "grok-imagine-image-quality",
-    "provider": "xAI",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "grok-imagine-video",
     "provider": "xAI",
     "capabilities": [
@@ -1242,29 +1234,11 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code-highspeed",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
     "id": "kimi-k3",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.6",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -1285,11 +1259,29 @@
     "status": "live"
   },
   {
+    "id": "kimi-k2.6",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
     "id": "kimi-k3.1-pro-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
     ],
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code-highspeed",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -3403,6 +3395,15 @@
   },
   {
     "id": "glm-5.3-flashx",
+    "provider": "Zhipu",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 128000,
+    "status": "live"
+  },
+  {
+    "id": "glm-5.3-flashx-legal",
     "provider": "Zhipu",
     "capabilities": [
       "text"
