@@ -1234,7 +1234,7 @@
     "status": "live"
   },
   {
-    "id": "kimi-k3",
+    "id": "kimi-k3.1-pro-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1251,7 +1251,7 @@
     "status": "live"
   },
   {
-    "id": "kimi-k3.1-pro-highspeed",
+    "id": "kimi-k3.1-pro",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1259,7 +1259,7 @@
     "status": "live"
   },
   {
-    "id": "kimi-k3.1-pro",
+    "id": "kimi-k3",
     "provider": "Moonshot",
     "capabilities": [
       "text"
