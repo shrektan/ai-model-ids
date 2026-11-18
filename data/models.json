@@ -1234,6 +1234,15 @@
     "status": "live"
   },
   {
+    "id": "kimi-k2.7-code",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
     "id": "kimi-k3.1-pro",
     "provider": "Moonshot",
     "capabilities": [
@@ -1243,15 +1252,6 @@
   },
   {
     "id": "kimi-k2.7-code-highspeed",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1797,6 +1797,14 @@
   {
     "id": "models/lyria-realtime-exp",
     "provider": "Google",
+    "capabilities": [
+      "text"
+    ],
+    "status": "preview"
+  },
+  {
+    "id": "Xing/Xing4.1-Preview",
+    "provider": "Qwen",
     "capabilities": [
       "text"
     ],
@@ -3065,25 +3073,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2.5-1.5b-instruct",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
     "id": "qwen-turbo-0919",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "qwen2.5-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3101,6 +3091,15 @@
     "status": "live"
   },
   {
+    "id": "qwen2.5-0.5b-instruct",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
     "id": "qwen-plus-latest",
     "provider": "Qwen",
     "capabilities": [
@@ -3110,7 +3109,7 @@
     "status": "preview"
   },
   {
-    "id": "qwen2-7b-instruct",
+    "id": "qwen2.5-1.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3128,7 +3127,7 @@
     "status": "live"
   },
   {
-    "id": "qwen2-0.5b-instruct",
+    "id": "qwen2-7b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3138,6 +3137,15 @@
   },
   {
     "id": "qwen2-1.5b-instruct",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "qwen2-0.5b-instruct",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3171,22 +3179,6 @@
     "status": "live"
   },
   {
-    "id": "qwen-1.8b-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "qwen-1.8b-longcontext-chat",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
     "id": "qwen-7b-chat",
     "provider": "Qwen",
     "capabilities": [
@@ -3203,6 +3195,14 @@
     "status": "live"
   },
   {
+    "id": "qwen-1.8b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
     "id": "qwen-72b-chat",
     "provider": "Qwen",
     "capabilities": [
@@ -3211,7 +3211,7 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-1.8b-chat",
+    "id": "qwen-1.8b-longcontext-chat",
     "provider": "Qwen",
     "capabilities": [
       "text"
@@ -3225,6 +3225,22 @@
       "text"
     ],
     "contextWindow": 1000000,
+    "status": "live"
+  },
+  {
+    "id": "qwen1.5-1.8b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "qwen1.5-14b-chat",
+    "provider": "Qwen",
+    "capabilities": [
+      "text"
+    ],
     "status": "live"
   },
   {
@@ -3253,11 +3269,12 @@
     "status": "live"
   },
   {
-    "id": "qwen1.5-14b-chat",
+    "id": "qwen-plus",
     "provider": "Qwen",
     "capabilities": [
       "text"
     ],
+    "contextWindow": 131072,
     "status": "live"
   },
   {
@@ -3267,15 +3284,6 @@
       "text"
     ],
     "contextWindow": 1000000,
-    "status": "live"
-  },
-  {
-    "id": "qwen-plus",
-    "provider": "Qwen",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
     "status": "live"
   },
   {
