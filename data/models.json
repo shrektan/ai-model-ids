@@ -1226,7 +1226,7 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.6",
+    "id": "kimi-k2.7-code",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1235,7 +1235,24 @@
     "status": "live"
   },
   {
-    "id": "kimi-k2.7-code",
+    "id": "kimi-k3.1-pro-highspeed",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.7-code-highspeed",
+    "provider": "Moonshot",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 131072,
+    "status": "live"
+  },
+  {
+    "id": "kimi-k2.6",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -1253,23 +1270,6 @@
   },
   {
     "id": "kimi-k3",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "status": "live"
-  },
-  {
-    "id": "kimi-k2.7-code-highspeed",
-    "provider": "Moonshot",
-    "capabilities": [
-      "text"
-    ],
-    "contextWindow": 131072,
-    "status": "live"
-  },
-  {
-    "id": "kimi-k3.1-pro-highspeed",
     "provider": "Moonshot",
     "capabilities": [
       "text"
@@ -3453,6 +3453,15 @@
   },
   {
     "id": "glm-5.3-flashx-legal",
+    "provider": "Zhipu",
+    "capabilities": [
+      "text"
+    ],
+    "contextWindow": 128000,
+    "status": "live"
+  },
+  {
+    "id": "glm-5.4",
     "provider": "Zhipu",
     "capabilities": [
       "text"
